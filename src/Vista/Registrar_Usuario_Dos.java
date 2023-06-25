@@ -37,8 +37,8 @@ public class Registrar_Usuario_Dos extends javax.swing.JFrame {
         dia = new javax.swing.JTextField();
         año = new javax.swing.JTextField();
         mes = new javax.swing.JTextField();
-        Pais = new javax.swing.JComboBox<String>();
-        Genero = new javax.swing.JComboBox<String>();
+        Pais = new javax.swing.JComboBox<>();
+        Genero = new javax.swing.JComboBox<>();
         Fecha_Dos = new javax.swing.JLabel();
         Pais_2 = new javax.swing.JLabel();
         primer_apell = new javax.swing.JLabel();
@@ -51,181 +51,256 @@ public class Registrar_Usuario_Dos extends javax.swing.JFrame {
         Obligatorio2 = new javax.swing.JLabel();
         Obligatorio3 = new javax.swing.JLabel();
         Informacion_Personal = new javax.swing.JLabel();
-        Obligatorio5 = new javax.swing.JLabel();
         Titulo = new javax.swing.JLabel();
         Obligatorio4 = new javax.swing.JLabel();
+        Aviso = new javax.swing.JPanel();
+        fecha = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1370, 770));
-        setPreferredSize(new java.awt.Dimension(1370, 770));
-        getContentPane().setLayout(null);
 
-        Regresar.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        Regresar.setForeground(new java.awt.Color(255, 0, 0));
+        Regresar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Regresar.setText("Regresar\n");
-        getContentPane().add(Regresar);
-        Regresar.setBounds(150, 560, 150, 35);
 
-        Registrar.setBackground(new java.awt.Color(255, 153, 153));
-        Registrar.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        Registrar.setForeground(new java.awt.Color(255, 0, 0));
         Registrar.setText("Continuar");
-        getContentPane().add(Registrar);
-        Registrar.setBounds(340, 560, 150, 35);
 
-        Primer_Nombre.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        Primer_Nombre.setForeground(new java.awt.Color(255, 0, 0));
+        Primer_Nombre.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Primer_Nombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(Primer_Nombre);
-        Primer_Nombre.setBounds(70, 200, 210, 20);
 
-        Segundo_Nombre.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        Segundo_Nombre.setForeground(new java.awt.Color(255, 0, 0));
+        Segundo_Nombre.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Segundo_Nombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(Segundo_Nombre);
-        Segundo_Nombre.setBounds(350, 200, 210, 20);
 
-        Primer_Apellido.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        Primer_Apellido.setForeground(new java.awt.Color(255, 0, 0));
+        Primer_Apellido.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Primer_Apellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(Primer_Apellido);
-        Primer_Apellido.setBounds(70, 280, 210, 20);
 
-        Segundo_Apellido.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        Segundo_Apellido.setForeground(new java.awt.Color(255, 0, 0));
+        Segundo_Apellido.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Segundo_Apellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(Segundo_Apellido);
-        Segundo_Apellido.setBounds(350, 280, 210, 20);
 
-        dia.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        dia.setForeground(new java.awt.Color(255, 0, 0));
+        dia.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         dia.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         dia.setText("DD");
-        getContentPane().add(dia);
-        dia.setBounds(70, 360, 65, 20);
 
-        año.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        año.setForeground(new java.awt.Color(255, 0, 0));
+        año.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         año.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         año.setText("AAAA");
-        getContentPane().add(año);
-        año.setBounds(210, 360, 65, 20);
 
-        mes.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        mes.setForeground(new java.awt.Color(255, 0, 0));
+        mes.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         mes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         mes.setText("MM");
-        getContentPane().add(mes);
-        mes.setBounds(140, 360, 65, 20);
 
-        Pais.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        Pais.setForeground(new java.awt.Color(255, 0, 0));
-        Pais.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "None", "Canada", "Estados Unidos", "Italia ", "Japon", "Venezuela " }));
+        Pais.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Pais.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Canada", "Estados Unidos", "Italia ", "Japon", "Venezuela " }));
         Pais.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Pais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PaisActionPerformed(evt);
             }
         });
-        getContentPane().add(Pais);
-        Pais.setBounds(350, 360, 210, 20);
 
-        Genero.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        Genero.setForeground(new java.awt.Color(255, 0, 0));
-        Genero.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "None", "Femenino", "Masculino", "Desconocido", "Otros" }));
-        getContentPane().add(Genero);
-        Genero.setBounds(210, 450, 210, 20);
+        Genero.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Femenino", "Masculino", "Desconocido", "Otros" }));
 
-        Fecha_Dos.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        Fecha_Dos.setForeground(new java.awt.Color(255, 0, 0));
-        Fecha_Dos.setText("Fecha de nacimiento:");
-        getContentPane().add(Fecha_Dos);
-        Fecha_Dos.setBounds(70, 330, 140, 15);
+        Fecha_Dos.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        Fecha_Dos.setText("Fecha");
 
-        Pais_2.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        Pais_2.setForeground(new java.awt.Color(255, 0, 0));
+        Pais_2.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         Pais_2.setText("Pais");
-        getContentPane().add(Pais_2);
-        Pais_2.setBounds(350, 330, 26, 15);
 
-        primer_apell.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        primer_apell.setForeground(new java.awt.Color(255, 0, 0));
-        primer_apell.setText("Primer apellido:");
-        getContentPane().add(primer_apell);
-        primer_apell.setBounds(70, 250, 110, 28);
+        primer_apell.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        primer_apell.setText("Primer apellido");
 
-        segundo_apell.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        segundo_apell.setForeground(new java.awt.Color(255, 0, 0));
+        segundo_apell.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         segundo_apell.setText("Segundo nombre");
-        getContentPane().add(segundo_apell);
-        segundo_apell.setBounds(350, 260, 106, 15);
 
-        Nombre.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        Nombre.setForeground(new java.awt.Color(255, 0, 0));
-        Nombre.setText("Primer nombre:");
-        getContentPane().add(Nombre);
-        Nombre.setBounds(70, 175, 110, 20);
+        Nombre.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        Nombre.setText("Primer nombre");
 
-        jLabel3.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel3.setText("Segundo nombre:");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(350, 175, 120, 20);
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel3.setText("Segundo nombre");
 
-        genero_.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        genero_.setForeground(new java.awt.Color(255, 0, 0));
+        genero_.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         genero_.setText("Genero");
-        getContentPane().add(genero_);
-        genero_.setBounds(270, 420, 45, 15);
 
-        Obligatorio.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        Obligatorio.setForeground(new java.awt.Color(255, 0, 0));
+        Obligatorio.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        Obligatorio.setForeground(new java.awt.Color(255, 0, 51));
         Obligatorio.setText("*");
-        getContentPane().add(Obligatorio);
-        Obligatorio.setBounds(180, 180, 5, 15);
 
-        Obligatorio1.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        Obligatorio1.setForeground(new java.awt.Color(255, 0, 0));
+        Obligatorio1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        Obligatorio1.setForeground(new java.awt.Color(255, 0, 51));
         Obligatorio1.setText("*");
-        getContentPane().add(Obligatorio1);
-        Obligatorio1.setBounds(180, 260, 5, 15);
 
-        Obligatorio2.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        Obligatorio2.setForeground(new java.awt.Color(255, 0, 0));
+        Obligatorio2.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        Obligatorio2.setForeground(new java.awt.Color(255, 0, 51));
         Obligatorio2.setText("*");
-        getContentPane().add(Obligatorio2);
-        Obligatorio2.setBounds(220, 330, 20, 15);
 
-        Obligatorio3.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        Obligatorio3.setForeground(new java.awt.Color(255, 0, 0));
+        Obligatorio3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        Obligatorio3.setForeground(new java.awt.Color(255, 0, 51));
         Obligatorio3.setText("*");
-        getContentPane().add(Obligatorio3);
-        Obligatorio3.setBounds(330, 420, 26, 15);
 
-        Informacion_Personal.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
-        Informacion_Personal.setForeground(new java.awt.Color(255, 0, 0));
+        Informacion_Personal.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Informacion_Personal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Informacion_Personal.setText("Informacion personal");
-        getContentPane().add(Informacion_Personal);
-        Informacion_Personal.setBounds(220, 120, 180, 17);
 
-        Obligatorio5.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        Obligatorio5.setForeground(new java.awt.Color(255, 0, 0));
-        Obligatorio5.setText("*");
-        getContentPane().add(Obligatorio5);
-        Obligatorio5.setBounds(380, 330, 26, 15);
-
-        Titulo.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
-        Titulo.setForeground(new java.awt.Color(255, 0, 0));
+        Titulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         Titulo.setText("Registrar usuario");
-        getContentPane().add(Titulo);
-        Titulo.setBounds(240, 80, 140, 30);
 
         Obligatorio4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         Obligatorio4.setForeground(new java.awt.Color(255, 0, 51));
-        Obligatorio4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/Registrase.jpg"))); // NOI18N
-        getContentPane().add(Obligatorio4);
-        Obligatorio4.setBounds(0, 0, 1370, 770);
+        Obligatorio4.setText("*");
+
+        javax.swing.GroupLayout AvisoLayout = new javax.swing.GroupLayout(Aviso);
+        Aviso.setLayout(AvisoLayout);
+        AvisoLayout.setHorizontalGroup(
+            AvisoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 340, Short.MAX_VALUE)
+        );
+        AvisoLayout.setVerticalGroup(
+            AvisoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+        );
+
+        fecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fechaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(202, 202, 202)
+                        .addComponent(Genero, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(Nombre)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Titulo)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Obligatorio)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Informacion_Personal))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addComponent(Regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(155, 155, 155)
+                        .addComponent(Registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(261, 261, 261)
+                        .addComponent(genero_)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Obligatorio3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(68, 68, 68)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Primer_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Primer_Apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(primer_apell)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(Obligatorio1))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(140, 140, 140)
+                                .addComponent(Fecha_Dos)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Obligatorio2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Pais, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Segundo_Apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Segundo_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(segundo_apell)
+                                    .addComponent(jLabel3)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(132, 132, 132)
+                                .addComponent(Pais_2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Obligatorio4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(221, 221, 221)
+                        .addComponent(Aviso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(514, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(Titulo)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Obligatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Nombre)
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(Informacion_Personal)
+                                .addGap(31, 31, 31)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Primer_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Segundo_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(Obligatorio1)
+                                .addComponent(segundo_apell))
+                            .addComponent(primer_apell, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Primer_Apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Segundo_Apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(Fecha_Dos)
+                                    .addGap(1, 1, 1))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Obligatorio2)
+                                    .addComponent(Pais_2)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(Obligatorio4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Pais, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(216, 216, 216)
+                        .addComponent(Aviso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(genero_)
+                    .addComponent(Obligatorio3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Genero, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(115, 115, 115)
+                .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(92, 92, 92))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -233,6 +308,10 @@ public class Registrar_Usuario_Dos extends javax.swing.JFrame {
     private void PaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PaisActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PaisActionPerformed
+
+    private void fechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fechaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fechaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,6 +349,7 @@ public class Registrar_Usuario_Dos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JPanel Aviso;
     private javax.swing.JLabel Fecha_Dos;
     public javax.swing.JComboBox<String> Genero;
     private javax.swing.JLabel Informacion_Personal;
@@ -279,7 +359,6 @@ public class Registrar_Usuario_Dos extends javax.swing.JFrame {
     public javax.swing.JLabel Obligatorio2;
     public javax.swing.JLabel Obligatorio3;
     private javax.swing.JLabel Obligatorio4;
-    private javax.swing.JLabel Obligatorio5;
     public javax.swing.JComboBox<String> Pais;
     private javax.swing.JLabel Pais_2;
     public javax.swing.JTextField Primer_Apellido;
@@ -291,6 +370,7 @@ public class Registrar_Usuario_Dos extends javax.swing.JFrame {
     private javax.swing.JLabel Titulo;
     public javax.swing.JTextField año;
     public javax.swing.JTextField dia;
+    public javax.swing.JTextField fecha;
     private javax.swing.JLabel genero_;
     private javax.swing.JLabel jLabel3;
     public javax.swing.JTextField mes;
@@ -298,7 +378,7 @@ public class Registrar_Usuario_Dos extends javax.swing.JFrame {
     private javax.swing.JLabel segundo_apell;
     // End of variables declaration//GEN-END:variables
 
-    /*public JTextField getFecha() {
+    public JTextField getFecha() {
         return fecha;
-    }*/
+    }
 }

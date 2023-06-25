@@ -8,7 +8,7 @@ package Controlador_Proyecto.Controlador_Inicio.Controlador_Principal;
 import Modelo.ConexionBD;
 import Modelo.DAO_Usuario;
 import Modelo.Dao_Admin;
-import Vista.Login;
+//import Modelo.Usuario_tabla;
 //Fin de modelos
 
 //Controladores
@@ -28,14 +28,17 @@ import javax.swing.JOptionPane;
  *
  * @author José Luis López
  */
+
+
 public class Controlador_Admind_Usuario implements ActionListener {
     private Usuario usuario;
+   // Usuario_tabla us= new Usuario_tabla()
+    
     
     //Instancia
         DAO_Usuario du= new DAO_Usuario();
         ConexionBD co= new ConexionBD();
         Dao_Admin da= new Dao_Admin();
-        Login login= new Login();
     //Fin de instanciar
         
     public Controlador_Admind_Usuario(Usuario usuario) {
@@ -49,18 +52,26 @@ public class Controlador_Admind_Usuario implements ActionListener {
             this.usuario.Eliminar.addActionListener(this);
         //fin de botones
     }
+    
 
+    
     @Override
     public void actionPerformed(ActionEvent ae) {
         
-        
+        if(ae.getSource()== usuario.Actualizar){
+        }
+        if(ae.getSource()== usuario.Eliminar){
+            
+        }
         
         if(ae.getSource()== usuario.Buscar){
             if(!usuario.Buscar_Usuario.getText().isEmpty()){
                 if(co.verificarConexion() ){ //Verificar la conexion con la BD
                     if(du.Existencia(usuario.Buscar_Usuario.getText(), 1) || 
-                        du.Existencia(usuario.Buscar_Usuario.getText(), 2)){//Verificar si existe
-                        du.mostrarDatosUsuario(usuario.Buscar_Usuario.getText());
+                       du.Existencia(usuario.Buscar_Usuario.getText(), 2)){//Verificar si existe
+                        usuario.Nombre.setText(usuario.Buscar_Usuario.getText());
+                        usuario.correo.setText(du.imprimir_usuario(usuario.Buscar_Usuario.getText()), 1, 2);
+                        
                     }else {
                         JOptionPane.showMessageDialog(null,"Error: Usuario no existe");
                     }//Fin de verificar existencia

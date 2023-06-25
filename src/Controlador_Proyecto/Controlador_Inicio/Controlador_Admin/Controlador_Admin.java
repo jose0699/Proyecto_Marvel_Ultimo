@@ -70,7 +70,7 @@ public class Controlador_Admin implements ActionListener {
         
         if(ae.getSource()==principal.Persona){
             Persona per= new Persona();
-            Controlador_Persona cper= new Controlador_Persona()
+            Controlador_Persona cper= new Controlador_Persona(per);
             per.setVisible(true);
             principal.setVisible(false);
         }

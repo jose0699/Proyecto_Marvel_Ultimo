@@ -37,49 +37,43 @@ public class DAO_Usuario {
 
 //Aqui empieza a buscar existencia
     
-public void mostrarDatosUsuario(String nombreUsuario) {
-    Connection conn = null;
-    PreparedStatement stmt = null;
-    ResultSet rs = null;
-    try {
-        int aux; 
-        String pais_nom = "";      
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Proyecto_Marvel", "postgres", "joseluis0699");
-        stmt = conn.prepareStatement("SELECT * FROM Usuario WHERE Usuario = ?");
-        stmt.setString(1, nombreUsuario);
-        rs = stmt.executeQuery();
-        if (rs.next()) {
-            String correoElectronico = rs.getString("Correo_Electronico");
-            String nombreCompleto = rs.getString("Primer_Nombre") + " " + rs.getString("Segundo_Nombre") + " " + 
-                                    rs.getString("Primer_Apellido") + " " + rs.getString("Segundo_Apellido");
-            String fechaNacimiento = rs.getString("Fecha_Nacimiento");
-            String genero = rs.getString("Genero");
-            String nroTarjeta = rs.getString("Nro_Tarjeta");
-            int uidPais = rs.getInt("UID_Pais");
-            
-            // Establecer los valores de los JLabel correspondientes
-            us.correo.setText(correoElectronico);
-            us.Nombre.setText(nombreCompleto);
-            us.fecha_nacimiento.setText(fechaNacimiento);
-            us.genero.setText(genero);
-            us.Nro_Tarjeta.setText(nroTarjeta);
-            aux= Toma_Tu_Valor(nombreUsuario,3);
-            pais_nom= String.valueOf(aux);
-            us.pais.setText(String.valueOf(pais_nom));
-        } else {
-            // Si no se encuentra el usuario, mostrar un mensaje de error
-            JOptionPane.showMessageDialog(null, "El usuario no existe");
-        }
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-        JOptionPane.showMessageDialog(null, "Error al obtener datos del usuario");
-    } finally {
-        // Cerrar los recursos
-        try { rs.close(); } catch (Exception e) {}
-        try { stmt.close(); } catch (Exception e) {}
-        try { conn.close(); } catch (Exception e) {}
+public String imprimir_usuario (String valorBuscado, int caso, int columna){ // aqui simplemente busca el valor de la pk y lo convierte a string
+    Connection conexion = null;
+    PreparedStatement consulta = null;
+    ResultSet resultado = null;
+    String sql = null;
+    String valor ="";
+    switch (caso){
+        case 1:
+            sql="Select * from usuario where usuario= ? ;";
+            break;
+        
+        case 2:    
+            sql="Select * from usuario where =? ";
+            break;   
     }
-}
+    
+    String url = "jdbc:postgresql://localhost:5432/Proyecto_Marvel";
+    String usuario = "postgres";
+    String contrasena = "joseluis0699";
+    
+    try{
+        conexion = DriverManager.getConnection(url, usuario, contrasena);
+        consulta = conexion.prepareStatement(sql);        
+        consulta.setString(1, valorBuscado);
+        resultado = consulta.executeQuery(); //ejecuta el select
+         if (resultado.next()) {
+                valor = resultado.getString(columna); //Obtiene el valor 
+                return valor;
+            }
+    } catch (SQLException e) {
+        System.err.println("Error al ejecutar la consulta: " + e.getMessage());
+    } finally{
+        // Cerrar objetos ResultSet, PreparedStatement y Connection
+    }
+    
+    return valor;
+}//Tecnicamente igualque lo anterior pero sin necesidad que convertirlo a int
 
 public int Toma_Tu_Valor (String valorBuscado, int caso){ // aqui simplemente busca el valor de la pk y lo convierte a string
     Connection conexion = null;
@@ -439,23 +433,22 @@ public void crearNuevoUsuario(String usuario, String correoElectronico, String p
     }
 }//Fin de insertar un nuevo usuario
 
-public void insertar_mensaulidad(String usuario_mensualidad){
-    String url = "jdbc:postgresql://localhost:5432/nombre_de_la_base_de_datos";
-        String usuario = "usuario";
-        String contrasena = "contraseña";
-        String sql = "{CALL insertar_mensualidad(?,NULL,?,?)}";
-        int codigoMembresia= Toma_Tu_Valor(usuario,2);
+public void insertar_mensaulidad(String usuario_mensualidad, int codigoMembresia){
+        String url = "jdbc:postgresql://localhost:5432/Proyecto_Marvel";
+        String usuarioBD = "postgres";
+        String contrasenaBD = "joseluis0699";
+        String sql = "iNSERT INTO Mensualidad(Fecha_inicio,Fecha_fin,usuario,Codigo) VALUES (?,NULL,?,?)";
         
-    try (Connection conn = DriverManager.getConnection(url, usuario, contrasena);
+    try (Connection conn = DriverManager.getConnection(url, usuarioBD, contrasenaBD);
         CallableStatement stmt = conn.prepareCall(sql)) {
 
         // Establecer los parámetros del procedimiento almacenado
             Timestamp fechaInicio = new Timestamp(System.currentTimeMillis());
             System.out.println (fechaInicio);        
 
-        stmt.setTimestamp(1, fechaInicio);       
-        stmt.setString(2, usuario_mensualidad);
-        stmt.setInt(3, codigoMembresia);
+            stmt.setTimestamp(1, fechaInicio);       
+            stmt.setString(2, usuario_mensualidad);
+            stmt.setInt(3, codigoMembresia);
 
             // Ejecutar el procedimiento almacenado
             stmt.execute();

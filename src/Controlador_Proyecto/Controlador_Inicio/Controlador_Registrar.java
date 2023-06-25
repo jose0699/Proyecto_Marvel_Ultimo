@@ -286,13 +286,13 @@ public boolean validarEdad(String dia, String mes, String anio) {
                                                 registrar_usuario_dos.Primer_Nombre.getText(), registrar_usuario_dos.Segundo_Nombre.getText()
                                                  , registrar_usuario_dos.Primer_Apellido.getText(), registrar_usuario_dos.Segundo_Apellido.getText(), 
                                                  ru.contraseña.getText(), fecha_nac, genero, ru.Numero_Credito.getText(), du.Toma_Tu_Valor(pais_insert, 1),1,1);
-                                                du.insertar_mensaulidad(ru.usuario.getText());
+                                                du.insertar_mensaulidad(ru.usuario.getText(),du.Toma_Tu_Valor(membresia,2));
                                             } else{
                                                 du.crearNuevoUsuario(ru.usuario.getText(), ru.correo.getText(), 
                                                 registrar_usuario_dos.Primer_Nombre.getText(), registrar_usuario_dos.Segundo_Nombre.getText()
                                                 , registrar_usuario_dos.Primer_Apellido.getText(), registrar_usuario_dos.Segundo_Apellido.getText(), 
                                                 ru.contraseña.getText(), fecha_nac, genero, ru.Numero_Credito.getText(), du.Toma_Tu_Valor(pais_insert, 1),1,0);
-                                                du.insertar_mensaulidad(ru.usuario.getText());
+                                                du.insertar_mensaulidad(ru.usuario.getText(),du.Toma_Tu_Valor(membresia,2));
                                             }
                                         } else{
                                             if (registrar_usuario_dos.Segundo_Apellido.getText().isEmpty()){
@@ -301,13 +301,13 @@ public boolean validarEdad(String dia, String mes, String anio) {
                                                 registrar_usuario_dos.Primer_Nombre.getText(), registrar_usuario_dos.Segundo_Nombre.getText()
                                                 , registrar_usuario_dos.Primer_Apellido.getText(), registrar_usuario_dos.Segundo_Apellido.getText(), 
                                                 ru.contraseña.getText(), fecha_nac, genero, ru.Numero_Credito.getText(), du.Toma_Tu_Valor(pais_insert, 1),0,1);
-                                                du.insertar_mensaulidad(ru.usuario.getText());
+                                                du.insertar_mensaulidad(ru.usuario.getText(),du.Toma_Tu_Valor(membresia,2));
                                             } else{
                                                 du.crearNuevoUsuario(ru.usuario.getText(), ru.correo.getText(), 
                                                 registrar_usuario_dos.Primer_Nombre.getText(), registrar_usuario_dos.Segundo_Nombre.getText()
                                                 , registrar_usuario_dos.Primer_Apellido.getText(), registrar_usuario_dos.Segundo_Apellido.getText(), 
                                                 ru.contraseña.getText(), fecha_nac, genero, ru.Numero_Credito.getText(), du.Toma_Tu_Valor(pais_insert, 1),0,0);
-                                                du.insertar_mensaulidad(ru.usuario.getText());
+                                                du.insertar_mensaulidad(ru.usuario.getText(),du.Toma_Tu_Valor(membresia,2));
                                             }
                                         }
                                 }else{
