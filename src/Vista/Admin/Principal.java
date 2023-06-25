@@ -29,63 +29,88 @@ public class Principal extends javax.swing.JFrame {
         Salir = new javax.swing.JButton();
         Persona = new javax.swing.JButton();
         Usuario = new javax.swing.JButton();
+        Salir1 = new javax.swing.JButton();
+        Salir2 = new javax.swing.JButton();
         Personaje = new javax.swing.JButton();
         Medio = new javax.swing.JButton();
-        Burcador = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1040, 650));
+        setPreferredSize(new java.awt.Dimension(1040, 650));
+        getContentPane().setLayout(null);
 
+        Salir.setBackground(new java.awt.Color(153, 204, 255));
+        Salir.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
         Salir.setText("Salir");
+        getContentPane().add(Salir);
+        Salir.setBounds(400, 490, 230, 35);
 
+        Persona.setBackground(new java.awt.Color(153, 204, 255));
+        Persona.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
         Persona.setText("Persona");
+        getContentPane().add(Persona);
+        Persona.setBounds(400, 190, 230, 35);
 
+        Usuario.setBackground(new java.awt.Color(153, 204, 255));
+        Usuario.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
         Usuario.setText("Usuario");
+        getContentPane().add(Usuario);
+        Usuario.setBounds(400, 250, 230, 35);
 
+        Salir1.setBackground(new java.awt.Color(153, 204, 255));
+        Salir1.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        Salir1.setText("Anterior");
+        getContentPane().add(Salir1);
+        Salir1.setBounds(400, 430, 100, 35);
+
+        Salir2.setBackground(new java.awt.Color(153, 204, 255));
+        Salir2.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        Salir2.setText("Siguiente");
+        Salir2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Salir2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Salir2);
+        Salir2.setBounds(530, 430, 100, 35);
+
+        Personaje.setBackground(new java.awt.Color(153, 204, 255));
+        Personaje.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
         Personaje.setText("Personaje");
+        getContentPane().add(Personaje);
+        Personaje.setBounds(400, 310, 230, 35);
 
+        Medio.setBackground(new java.awt.Color(153, 204, 255));
+        Medio.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
         Medio.setText("Medio");
+        getContentPane().add(Medio);
+        Medio.setBounds(400, 370, 230, 35);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(290, 290, 290)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Medio, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Personaje, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Persona, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(299, 299, 299)
-                        .addComponent(Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(Burcador, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(999, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(Burcador, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92)
-                .addComponent(Persona, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(Personaje, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Medio, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(320, Short.MAX_VALUE))
-        );
+        jLabel9.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        jLabel9.setText("¿Que desea hacer hoy?");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(420, 140, 180, 30);
+
+        jLabel10.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        jLabel10.setText("Bienvenido Administrador");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(410, 100, 200, 30);
+
+        jLabel8.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/Login Cruds.png"))); // NOI18N
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(0, 0, 1040, 650);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Salir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salir2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Salir2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,11 +148,15 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JTextField Burcador;
     public javax.swing.JButton Medio;
     public javax.swing.JButton Persona;
     public javax.swing.JButton Personaje;
     public javax.swing.JButton Salir;
+    public javax.swing.JButton Salir1;
+    public javax.swing.JButton Salir2;
     public javax.swing.JButton Usuario;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
