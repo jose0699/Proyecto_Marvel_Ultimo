@@ -8,7 +8,7 @@ package Controlador_Proyecto.Controlador_Inicio.Controlador_Principal;
 import Modelo.ConexionBD;
 import Modelo.DAO_Usuario;
 import Modelo.Dao_Admin;
-//import Modelo.Usuario_tabla;
+import Modelo.Usuario_BD;
 //Fin de modelos
 
 //Controladores
@@ -22,6 +22,7 @@ import Vista.Admin.Usuario;
 //Libreria
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.Date;
 import javax.swing.JOptionPane;
 //Fin de Liberia
 /**
@@ -32,7 +33,7 @@ import javax.swing.JOptionPane;
 
 public class Controlador_Admind_Usuario implements ActionListener {
     private Usuario usuario;
-   // Usuario_tabla us= new Usuario_tabla()
+    private  Usuario_BD us;
     
     
     //Instancia
@@ -44,6 +45,7 @@ public class Controlador_Admind_Usuario implements ActionListener {
     public Controlador_Admind_Usuario(Usuario usuario) {
         
         this.usuario = usuario;
+        this.us= us;
         
         //botones
             this.usuario.Buscar.addActionListener(this);
@@ -54,6 +56,42 @@ public class Controlador_Admind_Usuario implements ActionListener {
     }
     
 
+    public void insertar_valores(String usuario_Buscar){
+        String aux="";
+        usuario.Nombre.setText(usuario_Buscar);
+        
+        aux= du.Toma_Tu_Valor_String(usuario_Buscar,2);
+        usuario.correo.setText(aux);
+        
+        aux= du.Toma_Tu_Valor_String(usuario_Buscar,8);
+        usuario.fecha_nacimiento.setText(aux);
+        
+        aux= du.Toma_Tu_Valor_String(usuario_Buscar,7);
+        usuario.contraseña.setText(aux);
+        
+        aux= String.valueOf(du.Toma_Tu_Valor(usuario_Buscar,3));
+        //usuario.contraseña.setText(aux);
+        
+        aux= String.valueOf(du.Toma_Tu_Valor(usuario_Buscar,3));
+        us.setSegundoApellido(aux);
+        
+        aux= String.valueOf(du.Toma_Tu_Valor(usuario_Buscar,3));
+        us.setContrasena(aux);
+        
+        aux= String.valueOf(du.Toma_Tu_Valor(usuario_Buscar,3));
+        us.setFechaNacimiento(aux);
+        
+        aux= String.valueOf(du.Toma_Tu_Valor(usuario_Buscar,3));
+        us.setGenero(aux);
+        
+        aux= String.valueOf(du.Toma_Tu_Valor(usuario_Buscar,3));
+        us.setNroTarjeta(aux);
+        
+        aux= String.valueOf(du.Toma_Tu_Valor(usuario_Buscar,3));
+        us.setNombre_pais(aux);
+        
+        us.setUidPais(du.Toma_Tu_Valor(usuario_Buscar,13));
+    }
     
     @Override
     public void actionPerformed(ActionEvent ae) {
@@ -69,9 +107,8 @@ public class Controlador_Admind_Usuario implements ActionListener {
                 if(co.verificarConexion() ){ //Verificar la conexion con la BD
                     if(du.Existencia(usuario.Buscar_Usuario.getText(), 1) || 
                        du.Existencia(usuario.Buscar_Usuario.getText(), 2)){//Verificar si existe
-                        usuario.Nombre.setText(usuario.Buscar_Usuario.getText());
-                        usuario.correo.setText(du.imprimir_usuario(usuario.Buscar_Usuario.getText()), 1, 2);
-                        
+                        insertar_valores(usuario.Buscar_Usuario.getText());
+                        System.out.println (us.getContrasena());
                     }else {
                         JOptionPane.showMessageDialog(null,"Error: Usuario no existe");
                     }//Fin de verificar existencia

@@ -37,43 +37,90 @@ public class DAO_Usuario {
 
 //Aqui empieza a buscar existencia
     
-public String imprimir_usuario (String valorBuscado, int caso, int columna){ // aqui simplemente busca el valor de la pk y lo convierte a string
+public String Toma_Tu_Valor_String (String valorBuscado, int caso) {
     Connection conexion = null;
     PreparedStatement consulta = null;
     ResultSet resultado = null;
     String sql = null;
-    String valor ="";
-    switch (caso){
+    String valorEncontrado = null;
+    String nombre = "";
+    String valor = "";
+    
+    switch (caso) {
         case 1:
-            sql="Select * from usuario where usuario= ? ;";
+            sql = "Select Nombre from pais where uid_pais=?";
+            break;
+            
+        case 2:
+            sql = "Select correo_electronico from usuario where usuario=?";
             break;
         
-        case 2:    
-            sql="Select * from usuario where =? ";
-            break;   
+        case 3:
+            sql = "Select Primer_Nombre from usuario where usuario=?";
+            break;
+        
+        case 4:
+            sql = "Select Segundo_Nombre from usuario where usuario=?";
+            break;
+        
+        case 5:
+            sql = "Select Primer_Apellido from usuario where usuario=?";
+            break;
+        
+        case 6:
+            sql = "Select Segundo_Apellido from usuario where usuario=?";
+            break;
+        
+        case 7:
+            sql = "Select contrasena from usuario where usuario=?";
+            break;
+        
+        case 8:
+            sql = "Select Fecha_Nacimiento from usuario where usuario=?";
+            break;
+        
+        case 9:
+            sql = "Select Genero from usuario where usuario=?";
+            break;
+        
+        case 10:
+            sql = "Select Nro_Tarjeta from usuario where usuario=?";
+            break;
+        
+        case 11:
+            sql = "Select UID_Pais from usuario where usuario=?";
+            break;
     }
     
     String url = "jdbc:postgresql://localhost:5432/Proyecto_Marvel";
     String usuario = "postgres";
     String contrasena = "joseluis0699";
     
-    try{
+    try {
         conexion = DriverManager.getConnection(url, usuario, contrasena);
         consulta = conexion.prepareStatement(sql);        
         consulta.setString(1, valorBuscado);
         resultado = consulta.executeQuery(); //ejecuta el select
-         if (resultado.next()) {
-                valor = resultado.getString(columna); //Obtiene el valor 
-                return valor;
+       
+            if (caso == 13) {
+                if (resultado.next()) {
+                    valor = String.valueOf(resultado.getInt(1)); //Obtiene el valor y lo convierte a String
+                }
+            } else {         
+                if (resultado.next()) {
+                    valor = resultado.getString(1); //Obtiene el valor
+                    return valor;
+                }
             }
+        
     } catch (SQLException e) {
         System.err.println("Error al ejecutar la consulta: " + e.getMessage());
-    } finally{
+    } finally {
         // Cerrar objetos ResultSet, PreparedStatement y Connection
     }
     
     return valor;
-}//Tecnicamente igualque lo anterior pero sin necesidad que convertirlo a int
+}
 
 public int Toma_Tu_Valor (String valorBuscado, int caso){ // aqui simplemente busca el valor de la pk y lo convierte a string
     Connection conexion = null;
@@ -94,6 +141,8 @@ public int Toma_Tu_Valor (String valorBuscado, int caso){ // aqui simplemente bu
         
         case 3:
             sql="Select Nombre from pais where uid_pais=?";
+            break;
+         
     }
     
     String url = "jdbc:postgresql://localhost:5432/Proyecto_Marvel";
@@ -106,12 +155,21 @@ public int Toma_Tu_Valor (String valorBuscado, int caso){ // aqui simplemente bu
         consulta.setString(1, valorBuscado);
         resultado = consulta.executeQuery(); //ejecuta el select
         
-        if(caso==3){
-            if (resultado.next()) {
-                nombre=resultado.getString(1);
-                valor = Integer.parseInt(nombre); //Obtiene el valor 
-                return valor;
+        if(caso>=3){
+            
+            if(caso==13){
+                if (resultado.next()) {
+                    valor = resultado.getInt(1); //Obtiene el valor 
+                    return valor;
+                }
+            } else {         
+                if (resultado.next()) {
+                    nombre=resultado.getString(1);
+                    valor = Integer.parseInt(nombre); //Obtiene el valor 
+                    return valor;
+                }
             }
+            
         }else{
 
             if (resultado.next()) {
