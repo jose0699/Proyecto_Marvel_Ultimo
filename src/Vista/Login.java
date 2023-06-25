@@ -36,8 +36,8 @@ public class Login extends javax.swing.JFrame {
         Fondologin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1380, 780));
-        setPreferredSize(new java.awt.Dimension(1380, 780));
+        setMinimumSize(new java.awt.Dimension(1360, 760));
+        setPreferredSize(new java.awt.Dimension(1360, 760));
         getContentPane().setLayout(null);
 
         Iniciar_Sesion.setBackground(new java.awt.Color(50, 130, 250));
@@ -55,7 +55,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(Olvido_Contrasena);
         Olvido_Contrasena.setBounds(110, 420, 260, 45);
 
-        Crear_Usuario.setBackground(new java.awt.Color(46, 199, 62));
+        Crear_Usuario.setBackground(new java.awt.Color(255, 153, 153));
         Crear_Usuario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Crear_Usuario.setForeground(new java.awt.Color(255, 255, 255));
         Crear_Usuario.setText("Crear cuenta nueva");
@@ -86,7 +86,7 @@ public class Login extends javax.swing.JFrame {
         Fondologin.setMaximumSize(new java.awt.Dimension(1380, 768));
         Fondologin.setMinimumSize(new java.awt.Dimension(1380, 768));
         getContentPane().add(Fondologin);
-        Fondologin.setBounds(0, 0, 1370, 770);
+        Fondologin.setBounds(0, 0, 1360, 770);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
