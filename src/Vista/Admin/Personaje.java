@@ -27,27 +27,22 @@ public class Personaje extends javax.swing.JFrame {
     private void initComponents() {
 
         Regresar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Regresar.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Regresar.setText("Regresar");
+        getContentPane().add(Regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 150, 35));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(Regresar)
-                .addContainerGap(246, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(200, Short.MAX_VALUE)
-                .addComponent(Regresar)
-                .addGap(78, 78, 78))
-        );
+        jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
+        jLabel2.setText("Lo sentimos, todavia en proceso");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/Login Cruds.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 640));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -89,5 +84,7 @@ public class Personaje extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton Regresar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

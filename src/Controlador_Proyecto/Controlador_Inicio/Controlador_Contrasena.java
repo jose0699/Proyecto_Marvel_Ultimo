@@ -58,7 +58,11 @@ public class Controlador_Contrasena implements ActionListener{
             this.ccd.Cambiar_Contraseña.addActionListener(this);
         //fin de botones de Cambiar_Contraseña_Dos
     }
-
+      public void iniciar (){
+        cambiar_contrasena.setTitle("Cambiar Contraseña"); //El titulo que tendra en la ventana
+        cambiar_contrasena.setLocationRelativeTo(null); //Para que se inicie la ventana en el centro
+    }
+      
      public String Obtener_Codigo() {
         String codigo = "";
             for (int i=1; i<7; i++){
@@ -145,6 +149,7 @@ public class Controlador_Contrasena implements ActionListener{
               Login login= new Login();
               Controlador_Login cl= new Controlador_Login(login);
               login.setVisible(true);
+              JOptionPane.showMessageDialog(null,"Has cambiado tu contraseña exitosamente");
           }else {
             JOptionPane.showMessageDialog(null,"Error: Contraseñas no coinciden");
           }//Fin de Confirmar que las contraseñas introducidas sean iguales  

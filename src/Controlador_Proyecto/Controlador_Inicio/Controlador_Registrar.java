@@ -5,6 +5,7 @@
 package Controlador_Proyecto.Controlador_Inicio;
 
 //Vistas a utlizar
+import static Controlador_Proyecto.Controlador_Inicio.Controlador_Login.aux;
 import Vista.Login;
 import Vista.Registrar_Usuario;
 import Vista.Registrar_Usuario_Dos;
@@ -40,6 +41,7 @@ public class Controlador_Registrar implements ActionListener {
     
     //Variables auxiliares
     public static String genero, fecha, membresia,descripcion="";
+     public static int rep;
     //fin de variables auxiliares
     
     public Controlador_Registrar(Registrar_Usuario_Dos registrar_usuario_dos) {
@@ -54,7 +56,13 @@ public class Controlador_Registrar implements ActionListener {
         //Fin de botonoes de Registrar_Usuario_Dos
     }
     
-  
+   public void iniciar (){
+        registrar_usuario_dos.setTitle("Registrar"); //El titulo que tendra en la ventana
+        registrar_usuario_dos.setLocationRelativeTo(null); //Para que se inicie la ventana en el centro
+        registrar_usuario_dos.setResizable(false);
+      
+    }
+   
 public boolean Comprobaciones (String comprobar, String campo, int caso){
    
     if((comprobar == null || comprobar.isEmpty())){ //Comprobar vacio caso 
@@ -64,7 +72,7 @@ public boolean Comprobaciones (String comprobar, String campo, int caso){
       switch(caso) { //Comienzo del switch
             
             case 1: //Caso valido solo para usuario, Primer_Nomrbre, Segundo_Nombre,Primer Appellido, Segundo_Apellido y contraseña
-                if(campo.length() > 60) { //Comprueba el tamaño maximo del usuario, nombre y contraseña
+                if(comprobar.length() > 60) { //Comprueba el tamaño maximo del usuario, nombre y contraseña
                     JOptionPane.showMessageDialog(null, "Error de campo: Supero el MAX permito en " + campo);
                     return false;
                 } else {
@@ -72,7 +80,7 @@ public boolean Comprobaciones (String comprobar, String campo, int caso){
                 }
                 
             case 2: //Caso valido para correo_electronico
-                if(campo.length() > 256) { //Comprueba el tamaño maximo del correo electronico
+                if(comprobar.length() > 256) { //Comprueba el tamaño maximo del correo electronico
                     JOptionPane.showMessageDialog(null,"Error de campo: Supero el MAX permito en " + campo);
                     return false;
                 } else {
@@ -129,21 +137,25 @@ public boolean Comprobaciones (String comprobar, String campo, int caso){
             case 5: //Verifica el tipo de membresia para luego utilizarlo en el insert
                 if(comprobar.equals("Free")) {
                         Controlador_Registrar.membresia = "F";
+                        Controlador_Registrar.rep=1;
                         return true;
                     }
                     
                     if(comprobar.equals("Gold")) {
                         Controlador_Registrar.membresia = "G";
+                        Controlador_Registrar.rep=2;
                         return true;
                     }
                     
                     if(comprobar.equals("Premium")) {
                         Controlador_Registrar.membresia = "P";
+                        Controlador_Registrar.rep=3;
                         return true;
                     }
                     
                     if(comprobar.equals("Vip")) {
                         Controlador_Registrar.membresia = "V";
+                        Controlador_Registrar.rep=5;
                         return true;
                     }
                 
@@ -154,6 +166,7 @@ public boolean Comprobaciones (String comprobar, String campo, int caso){
     }//Fin de comprobar vacio     
 }
 
+        
 public boolean validarEdad(String dia, String mes, String anio) {
     LocalDate fechaNacimiento = LocalDate.of(Integer.parseInt(anio), Integer.parseInt(mes), Integer.parseInt(dia));
     LocalDate fechaActual = LocalDate.now();
@@ -207,7 +220,16 @@ public boolean validarEdad(String dia, String mes, String anio) {
             }
        }
 }
-  
+
+   public void perfil(String usuario, int hasta){
+       int rep=0;
+       while (hasta>rep){
+            rep++;
+            String aux= String.valueOf(rep);
+            String nombre_perfil= "Perfil "+aux;
+            du.crearperfil(nombre_perfil, usuario);
+        }
+   }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
@@ -278,36 +300,43 @@ public boolean validarEdad(String dia, String mes, String anio) {
                                                           registrar_usuario_dos.mes.getText()+"/"+
                                                           registrar_usuario_dos.año.getText();
                                         
-                                        String pais_insert= (String) registrar_usuario_dos.Pais.getSelectedItem();
                                         if(registrar_usuario_dos.Segundo_Nombre.getText().isEmpty()){
                                             if (registrar_usuario_dos.Segundo_Apellido.getText().isEmpty()){
                                                 
                                                 du.crearNuevoUsuario(ru.usuario.getText(), ru.correo.getText(), 
                                                 registrar_usuario_dos.Primer_Nombre.getText(), registrar_usuario_dos.Segundo_Nombre.getText()
-                                                 , registrar_usuario_dos.Primer_Apellido.getText(), registrar_usuario_dos.Segundo_Apellido.getText(), 
-                                                 ru.contraseña.getText(), fecha_nac, genero, ru.Numero_Credito.getText(), du.Toma_Tu_Valor(pais_insert, 1),1,1);
-                                                du.insertar_mensaulidad(ru.usuario.getText(),du.Toma_Tu_Valor(membresia,2));
+                                                , registrar_usuario_dos.Primer_Apellido.getText(), registrar_usuario_dos.Segundo_Apellido.getText(), 
+                                                ru.contraseña.getText(), fecha_nac, genero, ru.Numero_Credito.getText(), du.Toma_Tu_Valor((String) registrar_usuario_dos.Pais.getSelectedItem(), 1),1,1);
+                                                du.insertar_mensaulidad(ru.usuario.getText(),du.Toma_Tu_Valor(membresia,4));
+                                                perfil(ru.usuario.getText(), rep);
+                                
+                                                
                                             } else{
                                                 du.crearNuevoUsuario(ru.usuario.getText(), ru.correo.getText(), 
                                                 registrar_usuario_dos.Primer_Nombre.getText(), registrar_usuario_dos.Segundo_Nombre.getText()
                                                 , registrar_usuario_dos.Primer_Apellido.getText(), registrar_usuario_dos.Segundo_Apellido.getText(), 
-                                                ru.contraseña.getText(), fecha_nac, genero, ru.Numero_Credito.getText(), du.Toma_Tu_Valor(pais_insert, 1),1,0);
-                                                du.insertar_mensaulidad(ru.usuario.getText(),du.Toma_Tu_Valor(membresia,2));
+                                                ru.contraseña.getText(), fecha_nac, genero, ru.Numero_Credito.getText(), du.Toma_Tu_Valor((String) registrar_usuario_dos.Pais.getSelectedItem(), 1),1,0);
+                                                du.insertar_mensaulidad(ru.usuario.getText(),du.Toma_Tu_Valor(membresia,4));
+                                                perfil(ru.usuario.getText(), rep);                                               
                                             }
+                                            
                                         } else{
                                             if (registrar_usuario_dos.Segundo_Apellido.getText().isEmpty()){
                                                 
                                                 du.crearNuevoUsuario(ru.usuario.getText(), ru.correo.getText(), 
                                                 registrar_usuario_dos.Primer_Nombre.getText(), registrar_usuario_dos.Segundo_Nombre.getText()
                                                 , registrar_usuario_dos.Primer_Apellido.getText(), registrar_usuario_dos.Segundo_Apellido.getText(), 
-                                                ru.contraseña.getText(), fecha_nac, genero, ru.Numero_Credito.getText(), du.Toma_Tu_Valor(pais_insert, 1),0,1);
-                                                du.insertar_mensaulidad(ru.usuario.getText(),du.Toma_Tu_Valor(membresia,2));
+                                                ru.contraseña.getText(), fecha_nac, genero, ru.Numero_Credito.getText(), du.Toma_Tu_Valor((String) registrar_usuario_dos.Pais.getSelectedItem(), 1),0,1);
+                                                du.insertar_mensaulidad(ru.usuario.getText(),du.Toma_Tu_Valor(membresia,4));
+                                                perfil(ru.usuario.getText(), rep);
+                                                
                                             } else{
                                                 du.crearNuevoUsuario(ru.usuario.getText(), ru.correo.getText(), 
                                                 registrar_usuario_dos.Primer_Nombre.getText(), registrar_usuario_dos.Segundo_Nombre.getText()
                                                 , registrar_usuario_dos.Primer_Apellido.getText(), registrar_usuario_dos.Segundo_Apellido.getText(), 
-                                                ru.contraseña.getText(), fecha_nac, genero, ru.Numero_Credito.getText(), du.Toma_Tu_Valor(pais_insert, 1),0,0);
-                                                du.insertar_mensaulidad(ru.usuario.getText(),du.Toma_Tu_Valor(membresia,2));
+                                                ru.contraseña.getText(), fecha_nac, genero, ru.Numero_Credito.getText(), du.Toma_Tu_Valor((String) registrar_usuario_dos.Pais.getSelectedItem(), 1),0,0);
+                                                du.insertar_mensaulidad(ru.usuario.getText(),du.Toma_Tu_Valor(membresia,4));
+                                                perfil(ru.usuario.getText(), rep);
                                             }
                                         }
                                 }else{

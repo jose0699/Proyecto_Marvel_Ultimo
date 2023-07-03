@@ -30,67 +30,74 @@ public class Cambiar_Contrasena extends javax.swing.JFrame {
         Codigo = new javax.swing.JTextField();
         Obtener = new javax.swing.JButton();
         Regresar = new javax.swing.JButton();
+        Informacion_Personal1 = new javax.swing.JLabel();
+        Informacion_Personal = new javax.swing.JLabel();
+        Marvel = new javax.swing.JLabel();
         Continuar = new javax.swing.JButton();
+        Borde_Menu = new javax.swing.JLabel();
+        Fondologin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1360, 770));
+        setPreferredSize(new java.awt.Dimension(1360, 770));
+        getContentPane().setLayout(null);
 
-        Correo_Usuario.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Correo_Usuario.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Correo_Usuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Correo_Usuario.setText("Correo electronico / Usuario");
+        getContentPane().add(Correo_Usuario);
+        Correo_Usuario.setBounds(110, 330, 260, 30);
 
-        Codigo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Codigo.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Codigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Codigo.setText("Código de verificación");
+        getContentPane().add(Codigo);
+        Codigo.setBounds(110, 380, 160, 30);
 
-        Obtener.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Obtener.setBackground(new java.awt.Color(153, 255, 153));
+        Obtener.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Obtener.setText("Obtener");
+        getContentPane().add(Obtener);
+        Obtener.setBounds(280, 380, 87, 30);
 
-        Regresar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Regresar.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Regresar.setText("Regresar");
+        getContentPane().add(Regresar);
+        Regresar.setBounds(110, 500, 120, 30);
 
-        Continuar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Informacion_Personal1.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        Informacion_Personal1.setForeground(new java.awt.Color(255, 255, 255));
+        Informacion_Personal1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Informacion_Personal1.setText("¿Olvidaste la contraseña?");
+        getContentPane().add(Informacion_Personal1);
+        Informacion_Personal1.setBounds(140, 220, 210, 30);
+
+        Informacion_Personal.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        Informacion_Personal.setForeground(new java.awt.Color(255, 255, 255));
+        Informacion_Personal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Informacion_Personal.setText("Ingrese su usuario o correo :");
+        getContentPane().add(Informacion_Personal);
+        Informacion_Personal.setBounds(110, 300, 190, 30);
+
+        Marvel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/marvel.png"))); // NOI18N
+        getContentPane().add(Marvel);
+        Marvel.setBounds(100, 120, 290, 80);
+
+        Continuar.setBackground(new java.awt.Color(153, 255, 153));
+        Continuar.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Continuar.setText("Continuar");
+        getContentPane().add(Continuar);
+        Continuar.setBounds(250, 500, 120, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(446, 446, 446)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Obtener))
-                            .addComponent(Correo_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(442, 442, 442)
-                        .addComponent(Regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Continuar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(735, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(316, 316, 316)
-                .addComponent(Correo_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Continuar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Obtener, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(363, 363, 363))))
-        );
+        Borde_Menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/Cuadrado_Bo.jpg"))); // NOI18N
+        getContentPane().add(Borde_Menu);
+        Borde_Menu.setBounds(70, 80, 350, 520);
+
+        Fondologin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/guardianes_fondo_1.jpg"))); // NOI18N
+        Fondologin.setMaximumSize(new java.awt.Dimension(1380, 768));
+        Fondologin.setMinimumSize(new java.awt.Dimension(1380, 768));
+        getContentPane().add(Fondologin);
+        Fondologin.setBounds(0, 0, 1360, 770);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -131,9 +138,14 @@ public class Cambiar_Contrasena extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Borde_Menu;
     public javax.swing.JTextField Codigo;
     public javax.swing.JButton Continuar;
     public javax.swing.JTextField Correo_Usuario;
+    public javax.swing.JLabel Fondologin;
+    private javax.swing.JLabel Informacion_Personal;
+    private javax.swing.JLabel Informacion_Personal1;
+    private javax.swing.JLabel Marvel;
     public javax.swing.JButton Obtener;
     public javax.swing.JButton Regresar;
     // End of variables declaration//GEN-END:variables

@@ -38,33 +38,38 @@ public class Principal extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1040, 650));
-        setPreferredSize(new java.awt.Dimension(1040, 650));
+        setMinimumSize(new java.awt.Dimension(1040, 680));
+        setPreferredSize(new java.awt.Dimension(1040, 680));
         getContentPane().setLayout(null);
 
         Salir.setBackground(new java.awt.Color(153, 204, 255));
         Salir.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
         Salir.setText("Salir");
         getContentPane().add(Salir);
-        Salir.setBounds(400, 490, 230, 35);
+        Salir.setBounds(140, 480, 240, 35);
 
         Persona.setBackground(new java.awt.Color(153, 204, 255));
         Persona.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
         Persona.setText("Persona");
         getContentPane().add(Persona);
-        Persona.setBounds(400, 190, 230, 35);
+        Persona.setBounds(140, 180, 240, 35);
 
         Usuario.setBackground(new java.awt.Color(153, 204, 255));
         Usuario.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
         Usuario.setText("Usuario");
         getContentPane().add(Usuario);
-        Usuario.setBounds(400, 250, 230, 35);
+        Usuario.setBounds(140, 240, 240, 35);
 
         Salir1.setBackground(new java.awt.Color(153, 204, 255));
         Salir1.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
-        Salir1.setText("Anterior");
+        Salir1.setText("Regresar");
+        Salir1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Salir1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(Salir1);
-        Salir1.setBounds(400, 430, 100, 35);
+        Salir1.setBounds(140, 420, 110, 35);
 
         Salir2.setBackground(new java.awt.Color(153, 204, 255));
         Salir2.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
@@ -75,35 +80,35 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Salir2);
-        Salir2.setBounds(530, 430, 100, 35);
+        Salir2.setBounds(270, 420, 110, 35);
 
         Personaje.setBackground(new java.awt.Color(153, 204, 255));
         Personaje.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
         Personaje.setText("Personaje");
         getContentPane().add(Personaje);
-        Personaje.setBounds(400, 310, 230, 35);
+        Personaje.setBounds(140, 300, 240, 35);
 
         Medio.setBackground(new java.awt.Color(153, 204, 255));
         Medio.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
         Medio.setText("Medio");
         getContentPane().add(Medio);
-        Medio.setBounds(400, 370, 230, 35);
+        Medio.setBounds(140, 360, 240, 35);
 
-        jLabel9.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Lucida Fax", 1, 24)); // NOI18N
         jLabel9.setText("¿Que desea hacer hoy?");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(420, 140, 180, 30);
+        jLabel9.setBounds(110, 100, 300, 30);
 
-        jLabel10.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Lucida Fax", 1, 24)); // NOI18N
         jLabel10.setText("Bienvenido Administrador");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(410, 100, 200, 30);
+        jLabel10.setBounds(90, 50, 350, 30);
 
         jLabel8.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 0, 0));
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/Login Cruds.png"))); // NOI18N
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(0, 0, 1040, 650);
+        jLabel8.setBounds(0, 0, 1050, 650);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -111,6 +116,10 @@ public class Principal extends javax.swing.JFrame {
     private void Salir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salir2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Salir2ActionPerformed
+
+    private void Salir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salir1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Salir1ActionPerformed
 
     /**
      * @param args the command line arguments

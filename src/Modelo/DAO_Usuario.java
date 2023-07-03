@@ -6,9 +6,12 @@ package Modelo;
 
 //Conexion a la base de datos
 import Vista.Admin.Usuario;
+import Vista.Admin.Usuario;
+import Vista.Usuario.Perfil;
 //Fin de la conexion a la base de datos
 
 //Librerias a utilizar
+import Vista.Usuario.Usuario_us;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -33,10 +36,282 @@ import javax.swing.JOptionPane;
  * @author José Luis López
  */
 public class DAO_Usuario {
-    Usuario us= new Usuario();
 
 //Aqui empieza a buscar existencia
+    public String Toma_Tu_Valor_String_En_Fila_uid (String valorBuscado, int fila) {
+    Connection conexion = null;
+    PreparedStatement consulta = null;
+    ResultSet resultado = null;
+    String url = "jdbc:postgresql://localhost:5432/Proyecto_Marvel";
+    String usuario = "postgres";
+    String contrasena = "joseluis0699";
+    String valor = null;
+
+    String sql = "SELECT UID_Perfil FROM perfil WHERE usuario=? LIMIT 5";
+
+    try {
+        conexion = DriverManager.getConnection(url, usuario, contrasena);
+        consulta = conexion.prepareStatement(sql);
+        consulta.setString(1, valorBuscado);
+        resultado = consulta.executeQuery();
+
+        if (resultado.isBeforeFirst()) { // Comprueba si hay resultados
+            // Itera a través de los resultados
+            int contadorFilas = 0;
+            while (resultado.next()) {
+                contadorFilas++;
+                if (contadorFilas == fila) { // Comprueba si es la fila deseada
+                    
+                    valor = resultado.getString(1); // Obtiene el valor de la columna 1 de la fila deseada
+                    break;
+                }
+            }
+        }
+    } catch (SQLException e) {
+        System.err.println("Error al ejecutar la consulta: " + e.getMessage());
+    } finally {
+        // Cerrar objetos ResultSet, PreparedStatement y Connection
+    }
+
+    return valor;
+}
+   public String Perfil_Usuario (Perfil p,String valorBuscado, int fila) {
+    Connection conexion = null;
+    PreparedStatement consulta = null;
+    ResultSet resultado = null;
+    String url = "jdbc:postgresql://localhost:5432/Proyecto_Marvel";
+    String usuario = "postgres";
+    String contrasena = "joseluis0699";
+    String valor = null;
+
+    String sql = "SELECT Nombre,Correo_Notificacion FROM perfil WHERE usuario=? LIMIT 5";
+
+    try {
+        conexion = DriverManager.getConnection(url, usuario, contrasena);
+        consulta = conexion.prepareStatement(sql);
+        consulta.setString(1, valorBuscado);
+        resultado = consulta.executeQuery();
+
+        if (resultado.isBeforeFirst()) { // Comprueba si hay resultados
+            // Itera a través de los resultados
+            int contadorFilas = 0;
+            while (resultado.next()) {
+                contadorFilas++;
+                if (contadorFilas == fila) { // Comprueba si es la fila deseada
+                    p.Nombre.setText(resultado.getString(1)); // Obtiene el valor de la columna 1 de la fila deseada
+                    String aux=resultado.getString(2);
+                    if(aux==null || aux.isEmpty()){
+                        p.correo.setText("N/A");
+                    }else{
+                        p.correo.setText(resultado.getString(2));  // Obtiene el valor de la columna 2 de la fila deseada
+                    }
+                    break;
+                }
+            }
+        }
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null,"Error al ejecutar la consulta: " + e.getMessage());
+    } finally {
+        // Cerrar objetos ResultSet, PreparedStatement y Connection
+    }
+
+    return valor;
+}
+
+    /*
+        Toma_Tu_Valor_String_En_Fila_Correo= En esta funcion me devuelve el correo electronico del
+        perfil del usuario dado aun valor, aunque en el selct apara que lo esta buscando con el nombre
+        de usuario
+    */
+   
+public String Toma_Tu_Valor_String_En_Fila(String valorBuscado, int fila) {
+    Connection conexion = null;
+    PreparedStatement consulta = null;
+    ResultSet resultado = null;
+    String url = "jdbc:postgresql://localhost:5432/Proyecto_Marvel";
+    String usuario = "postgres";
+    String contrasena = "joseluis0699";
+    String valor = null;
+
+    String sql = "SELECT nombre FROM perfil WHERE usuario=? LIMIT 5";
+
+    try {
+        conexion = DriverManager.getConnection(url, usuario, contrasena);
+        consulta = conexion.prepareStatement(sql);
+        consulta.setString(1, valorBuscado);
+        resultado = consulta.executeQuery();
+
+        if (resultado.isBeforeFirst()) { // Comprueba si hay resultados
+            // Itera a través de los resultados
+            int contadorFilas = 0;
+            while (resultado.next()) {
+                contadorFilas++;
+                if (contadorFilas == fila) { // Comprueba si es la fila deseada
+                    valor = resultado.getString(1); // Obtiene el valor de la columna 1 de la fila deseada
+                    break;
+                }
+            }
+        }
+    } catch (SQLException e) {
+        System.err.println("Error al ejecutar la consulta: " + e.getMessage());
+    } finally {
+        // Cerrar objetos ResultSet, PreparedStatement y Connection
+    }
+
+    return valor;
+}
+
+    /*
+        Imprimir_Usuario_2= Dado al el nombre del usuario o el correo, imprimira los datos
+        del usuario dado una consulta simple, solo necesita el nombre del usuario o el correo
+        el objeto instanciado para imprimir y el caso es para saber con cual de los dos esta 
+        buscando.
+        Nota= Hace lo mismo que Imprimir_Usuario, pero con la vista Usuario_Us
+    */
+public void Imprimir_Usuario_2 (String valorBuscado, Usuario_us interfaz, int caso) {
+    Connection conexion = null;
+    PreparedStatement consulta = null;
+    ResultSet resultado = null;
+    String sql = null;
+    String valorEncontrado = null;
+    String nombre = "";
+    String aux = "";
+    int pais = 0;
+    switch (caso) {
+        case 1:
+            sql = "Select * from usuario where usuario=?";
+            pais=1;
+            break;
+            
+        case 2:
+            sql = "Select * from usuario where Correo_Electronico=?";
+             pais=13;
+            break;         
+    }
     
+    String url = "jdbc:postgresql://localhost:5432/Proyecto_Marvel";
+    String usuario = "postgres";
+    String contrasena = "joseluis0699";
+    
+    try {
+        conexion = DriverManager.getConnection(url, usuario, contrasena);
+        consulta = conexion.prepareStatement(sql);        
+        consulta.setString(1, valorBuscado);
+        resultado = consulta.executeQuery(); //ejecuta el select
+       
+                if (resultado.next()) {
+                    
+                    
+                    interfaz.usuario.setText(resultado.getString(1));
+                    interfaz.correo.setText(resultado.getString(2));
+                    interfaz.Nombre1.setText(resultado.getString(3));               
+                    interfaz.apellido.setText(resultado.getString(5));                    
+                    interfaz.fecha_nacimiento.setText(resultado.getString(8));                    
+        
+                    aux=resultado.getString(9);
+                    switch (aux){
+                        case"F":
+                            aux="Femenino";
+                        break;
+                        
+                        case"M":
+                            aux="Masculino";
+                        break;
+                
+                        case "O":
+                            aux="Otros";
+                        break;
+                    
+                        case "D": 
+                            aux="Desconocido";
+                        break;
+                    }
+                    interfaz.genero.setText(aux);                       
+                    interfaz.pais.setText(Toma_Tu_Valor_String(valorBuscado,pais));
+                }
+    } catch (SQLException e) {
+        System.err.println("Error al ejecutar la consulta: " + e.getMessage());
+    } finally {
+        // Cerrar objetos ResultSet, PreparedStatement y Connection
+    }
+}
+
+    /*
+        Imprimir_Usuario= Dado al el nombre del usuario o el correo, imprimira los datos
+        del usuario dado una consulta simple, solo necesita el nombre del usuario o el correo
+        el objeto instanciado para imprimir y el caso es para saber con cual de los dos esta 
+        buscando
+    */
+public void Imprimir_Usuario (String valorBuscado, Usuario interfaz, int caso) {
+    Connection conexion = null;
+    PreparedStatement consulta = null;
+    ResultSet resultado = null;
+    String sql = null;
+    String valorEncontrado = null;
+    String nombre = "";
+    String aux = "";
+    int pais = 0;
+    switch (caso) {
+        case 1:
+            sql = "Select * from usuario where usuario=?";
+            pais=1;
+            break;
+            
+        case 2:
+            sql = "Select * from usuario where Correo_Electronico=?";
+             pais=13;
+            break;         
+    }
+    
+    String url = "jdbc:postgresql://localhost:5432/Proyecto_Marvel";
+    String usuario = "postgres";
+    String contrasena = "joseluis0699";
+    
+    try {
+        conexion = DriverManager.getConnection(url, usuario, contrasena);
+        consulta = conexion.prepareStatement(sql);        
+        consulta.setString(1, valorBuscado);
+        resultado = consulta.executeQuery(); //ejecuta el select
+       
+                if (resultado.next()) {
+                    
+                    
+                    interfaz.usuario.setText(resultado.getString(1));
+                    interfaz.correo.setText(resultado.getString(2));
+                    interfaz.Nombre.setText(resultado.getString(3));               
+                    interfaz.apellido.setText(resultado.getString(5));
+                    interfaz.contraseña.setText(resultado.getString(7));
+                    interfaz.fecha_nacimiento.setText(resultado.getString(8));                    
+        
+                    aux=resultado.getString(9);
+                    switch (aux){
+                        case"F":
+                            aux="Femenino";
+                        break;
+                        
+                        case"M":
+                            aux="Masculino";
+                        break;
+                
+                        case "O":
+                            aux="Otros";
+                        break;
+                    
+                        case "D": 
+                            aux="Desconocido";
+                        break;
+                    }
+                    interfaz.genero.setText(aux);  
+                    interfaz.Nro_Tarjeta.setText(resultado.getString(10)); 
+                    interfaz.pais.setText(Toma_Tu_Valor_String(valorBuscado,pais));
+                }
+    } catch (SQLException e) {
+        System.err.println("Error al ejecutar la consulta: " + e.getMessage());
+    } finally {
+        // Cerrar objetos ResultSet, PreparedStatement y Connection
+    }
+}
+
 public String Toma_Tu_Valor_String (String valorBuscado, int caso) {
     Connection conexion = null;
     PreparedStatement consulta = null;
@@ -48,7 +323,7 @@ public String Toma_Tu_Valor_String (String valorBuscado, int caso) {
     
     switch (caso) {
         case 1:
-            sql = "Select Nombre from pais where uid_pais=?";
+            sql = "select Nombre from pais where uid_pais= (select uid_pais from usuario where usuario= ?)";
             break;
             
         case 2:
@@ -90,6 +365,17 @@ public String Toma_Tu_Valor_String (String valorBuscado, int caso) {
         case 11:
             sql = "Select UID_Pais from usuario where usuario=?";
             break;
+            
+        case 12:
+            sql = "Select Tipo_Membresia from membresia where codigo=? and Fecha_fin is NULL";
+            break;
+        
+        case 13:
+            sql = "select Nombre from pais where uid_pais= (select uid_pais from usuario where Correo_Electronico= ?)";
+            break;
+            
+        case 14:
+            sql="SELECT Tipo_Membresia FROM membresia WHERE codigo = ( SELECT codigo FROM mensualidad WHERE usuario = ? AND fecha_fin IS NULL) AND fecha_fin IS NULL;";
     }
     
     String url = "jdbc:postgresql://localhost:5432/Proyecto_Marvel";
@@ -101,17 +387,14 @@ public String Toma_Tu_Valor_String (String valorBuscado, int caso) {
         consulta = conexion.prepareStatement(sql);        
         consulta.setString(1, valorBuscado);
         resultado = consulta.executeQuery(); //ejecuta el select
-       
-            if (caso == 13) {
+      
+                  
                 if (resultado.next()) {
-                    valor = String.valueOf(resultado.getInt(1)); //Obtiene el valor y lo convierte a String
-                }
-            } else {         
-                if (resultado.next()) {
+                    
                     valor = resultado.getString(1); //Obtiene el valor
                     return valor;
                 }
-            }
+            
         
     } catch (SQLException e) {
         System.err.println("Error al ejecutar la consulta: " + e.getMessage());
@@ -136,13 +419,24 @@ public int Toma_Tu_Valor (String valorBuscado, int caso){ // aqui simplemente bu
             break;
         
         case 2:    
-            sql="Select codigo from membresia where tipo_membresia=? and Fecha_fin is NULL";
+            sql="Select codigo from mensualidad where usuario=? and Fecha_fin is NULL";
             break;
         
         case 3:
             sql="Select Nombre from pais where uid_pais=?";
             break;
-         
+        
+        case 4:
+            sql="select Codigo from membresia where Tipo_Membresia=? and fecha_fin is NULL";
+            break;
+            
+        case 5:
+            sql="select count(*) from perfil where usuario=?;";
+            break;
+            
+        case 6:
+            sql="select count(*) from mensualidad where usuario=? and fecha_fin is null;";
+            break;
     }
     
     String url = "jdbc:postgresql://localhost:5432/Proyecto_Marvel";
@@ -156,20 +450,13 @@ public int Toma_Tu_Valor (String valorBuscado, int caso){ // aqui simplemente bu
         resultado = consulta.executeQuery(); //ejecuta el select
         
         if(caso>=3){
-            
-            if(caso==13){
-                if (resultado.next()) {
-                    valor = resultado.getInt(1); //Obtiene el valor 
-                    return valor;
-                }
-            } else {         
-                if (resultado.next()) {
-                    nombre=resultado.getString(1);
-                    valor = Integer.parseInt(nombre); //Obtiene el valor 
-                    return valor;
-                }
+                    
+            if (resultado.next()) {
+                nombre=resultado.getString(1);
+                valor = Integer.parseInt(nombre); //Obtiene el valor 
+                return valor;
             }
-            
+   
         }else{
 
             if (resultado.next()) {
@@ -177,6 +464,7 @@ public int Toma_Tu_Valor (String valorBuscado, int caso){ // aqui simplemente bu
                 return valor;
             }
         }
+        
     } catch (SQLException e) {
         System.err.println("Error al ejecutar la consulta: " + e.getMessage());
     } finally{
@@ -231,22 +519,6 @@ public int Toma_Tu_Valor (String valorBuscado, int caso){ // aqui simplemente bu
         case 8: //Plataforma
             sql = "SELECT COUNT(*) FROM plataforma  WHERE Nombre = ?";
             break;
-            
-        /* case 9: //membresia
-            sql = "SELECT Fecha_fin FROM Membresia WHERE Usuario = ? ORDER BY Fecha_inicio DESC LIMIT 1;";
-            try (PreparedStatement statement = conexion.prepareStatement(sql)) {
-                statement.setString(1, valorBuscado);
-                result = statement.executeQuery();
-                if (result.next()) {
-                    Date fechaFin = result.getDate("Fecha_fin");
-                    if (fechaFin == null) { 
-                        return false;
-                    }
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        break;*/
             
         default:
             return false;
@@ -364,6 +636,45 @@ public int Toma_Tu_Valor (String valorBuscado, int caso){ // aqui simplemente bu
 /*Cambiar la contraseña del usuario especifico, tienes que especificar la nueva contraseña al principio
     luego al usuario que quieres que se la cambia y por ultimo un boleano donde si es 1 cambia a traves
     del nombre de usuario y si es falso cambia a traves del correro electronico (Afecta a la tabla usuario)*/     
+   
+   public void Actualizar_Usuario(String usuario, String correo, 
+           String primerNombre, String segundoNombre, String primerApellido, 
+           String segundoApellido, String contrasena, String fechaNacimiento, 
+           String genero, String nroTarjeta, int uidPais) {
+    String url = "jdbc:postgresql://localhost:5432/Proyecto_Marvel";
+    String usuarioBD = "postgres";
+    String contrasenaBD = "joseluis0699";
+    String sql = "UPDATE Usuario SET Correo_Electronico = ?, Primer_Nombre = ?, Segundo_Nombre = ?, Primer_Apellido = ?, Segundo_Apellido = ?, Contrasena = ?, Fecha_Nacimiento = ?, Genero = ?, Nro_Tarjeta = ?, UID_Pais = ? WHERE Usuario = ?";
+    segundoNombre=null;
+    segundoApellido= null;
+    
+    try (Connection conexion = DriverManager.getConnection(url, usuarioBD, contrasenaBD)) {
+        // Preparar la consulta
+        PreparedStatement ps = conexion.prepareStatement(sql);
+
+        ps.setString(1, correo);
+        ps.setString(2, primerNombre);
+        ps.setString(3, segundoNombre);
+        ps.setString(4, primerApellido);
+        ps.setString(5, segundoApellido);
+        ps.setString(6, contrasena);
+        ps.setString(7, fechaNacimiento);
+        ps.setString(8, genero);
+        ps.setString(9, nroTarjeta);
+        ps.setInt(10, uidPais);
+        ps.setString(11, usuario);
+
+        ps.executeUpdate();
+
+        // Cerrar el objeto PreparedStatement
+        ps.close();
+
+        System.out.println("El usuario ha sido actualizado correctamente.");
+    } catch (SQLException e) {
+        System.out.println("Error al actualizar el usuario: " + e.getMessage());
+    }
+}
+   
    public void Cambiar_Contraseña(String nueva_contraseña, String cambio, boolean tipo) {
     Connection conexion = null;
     PreparedStatement consulta = null;
@@ -419,6 +730,50 @@ public int Toma_Tu_Valor (String valorBuscado, int caso){ // aqui simplemente bu
    maneja dos datos, entonces  hare un listado en el siguiente comentario UwU*/
    
    /* Lista de */
+   //Inserta un nuevo usuario en la tabla de usuario   
+public void crearperfil(String Nombre, String usuario) {
+    
+    Connection conexion = null;
+    PreparedStatement consulta = null;
+    ResultSet resultado = null;
+    String sql = "INSERT INTO Perfil (Nombre, Correo_Notificacion, Usuario) VALUES (?, NULL, ?)";
+    String url = "jdbc:postgresql://localhost:5432/Proyecto_Marvel";
+    String usuarioBD = "postgres";
+    String contrasenaBD = "joseluis0699";
+ 
+    try {
+        conexion = DriverManager.getConnection(url, usuarioBD, contrasenaBD);
+        consulta = conexion.prepareStatement(sql);
+        consulta.setString(1, Nombre);
+        consulta.setString(2, usuario);        
+       
+        consulta.executeUpdate();
+    } catch (SQLException e) {
+        System.err.println("Error el nuevo perfil: " + e.getMessage());
+    } finally {
+        if (resultado != null) {
+            try {
+                resultado.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (consulta != null) {
+            try {
+                consulta.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (conexion != null) {
+            try {
+                conexion.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}//Fin de insertar un nuevo usuario
 
 //Inserta un nuevo usuario en la tabla de usuario   
 public void crearNuevoUsuario(String usuario, String correoElectronico, String primerNombre,
@@ -502,8 +857,6 @@ public void insertar_mensaulidad(String usuario_mensualidad, int codigoMembresia
 
         // Establecer los parámetros del procedimiento almacenado
             Timestamp fechaInicio = new Timestamp(System.currentTimeMillis());
-            System.out.println (fechaInicio);        
-
             stmt.setTimestamp(1, fechaInicio);       
             stmt.setString(2, usuario_mensualidad);
             stmt.setInt(3, codigoMembresia);
@@ -516,5 +869,95 @@ public void insertar_mensaulidad(String usuario_mensualidad, int codigoMembresia
         }
 }
 
+ public void actualizarFechaFin(String valor) {
+     
+        String url = "jdbc:postgresql://localhost:5432/Proyecto_Marvel";
+        String usuarioBD = "postgres";
+        String contrasenaBD = "joseluis0699";
+        
+        try (Connection conexion = DriverManager.getConnection(url, usuarioBD, contrasenaBD)) {
+            // Consulta SQL para actualizar la columna "fecha_fin"
+            String consulta = "UPDATE Mensualidad SET fecha_fin = ? WHERE usuario=? and fecha_fin IS NULL";
+            
+            // Preparar la consulta
+            PreparedStatement ps = conexion.prepareStatement(consulta);
+            
+            // Establecer la fecha actual como valor para la columna "fecha_fin"
+            LocalDateTime fechaActual = LocalDateTime.now();
+            ps.setObject(1, java.sql.Timestamp.valueOf(fechaActual));
+            ps.setString(2, valor);
+            ps.executeUpdate();
+            
+            // Cerrar el objeto PreparedStatement
+            ps.close();
+            
+            System.out.println("La columna 'fecha_fin' se ha actualizado correctamente.");
+            
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar la columna 'fecha_fin': " + e.getMessage());
+        }
+    
+}
+    /*
+       Actualizar_perfil= Como su nombre lo indica actualiza el
+    */
+    public void actualizarperfil(String valor,String correo, int uid) {
+     
+        String url = "jdbc:postgresql://localhost:5432/Proyecto_Marvel";
+        String usuarioBD = "postgres";
+        String contrasenaBD = "joseluis0699";
+        
+        try (Connection conexion = DriverManager.getConnection(url, usuarioBD, contrasenaBD)) {
+            // Consulta SQL para actualizar la columna "fecha_fin"
+            String consulta = "UPDATE Perfil SET Nombre = ?, Correo_Notificacion = ? WHERE UID_Perfil = ?";
+            
+            // Preparar la consulta
+            PreparedStatement ps = conexion.prepareStatement(consulta);
+            
+            // Establecer la fecha actual como valor para la columna "fecha_fin"
+            LocalDateTime fechaActual = LocalDateTime.now();
+            ps.setString(1, valor);
+            ps.setString(2, correo);
+            ps.setInt(3, uid);
+            ps.executeUpdate();
+            
+            // Cerrar el objeto PreparedStatement
+            ps.close();
+            
+            System.out.println("La columna 'fecha_fin' se ha actualizado correctamente.");
+            
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar la columna 'fecha_fin': " + e.getMessage());
+        } 
+    }
+ 
+//Delete
+
+    /*
+        Borrar_Usuario= Con el nombre del usuario se elimina el usuario, pero dado a la entrega anterior
+        no se puede eliminar un usuario solo suspender. Nota no se si dejarlo para el admin y desabilitar
+        que el usuario tenga esta opcion
+    */
+public void Borrar_Usuario(String valor) { //Aqui elimino al usuario
+    String url = "jdbc:postgresql://localhost:5432/Proyecto_Marvel";
+    String usuarioBD = "postgres";
+    String contrasenaBD = "joseluis0699";
+    String sql = "DELETE FROM usuario WHERE usuario=?"; // Corrección en la sintaxis de la consulta de eliminación
+
+    try (Connection conexion = DriverManager.getConnection(url, usuarioBD, contrasenaBD)) {
+        // Preparar la consulta
+        PreparedStatement ps = conexion.prepareStatement(sql);
+
+        ps.setString(1, valor);
+        ps.executeUpdate();
+
+        // Cerrar el objeto PreparedStatement
+        ps.close();
+
+        System.out.println("El usuario ha sido eliminado correctamente.");
+    } catch (SQLException e) {
+        System.out.println("Error al eliminar el usuario: " + e.getMessage());
+    }
+} //Se elimina el usuario
 
 }

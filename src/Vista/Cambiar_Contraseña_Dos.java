@@ -30,48 +30,93 @@ public class Cambiar_Contraseña_Dos extends javax.swing.JFrame {
         Cambiar_Contraseña = new javax.swing.JButton();
         Contraseña = new javax.swing.JTextField();
         Confirma_Contraseña = new javax.swing.JTextField();
+        Informacion_Personal3 = new javax.swing.JLabel();
+        Informacion_Personal2 = new javax.swing.JLabel();
+        Marvel = new javax.swing.JLabel();
+        Informacion_Personal1 = new javax.swing.JLabel();
+        Informacion_Personal = new javax.swing.JLabel();
+        Borde_Menu = new javax.swing.JLabel();
+        Fondologin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1360, 780));
+        setPreferredSize(new java.awt.Dimension(1360, 780));
+        getContentPane().setLayout(null);
 
+        Regresar.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
         Regresar.setText("Regresar");
+        getContentPane().add(Regresar);
+        Regresar.setBounds(110, 510, 120, 30);
 
+        Cambiar_Contraseña.setBackground(new java.awt.Color(46, 199, 62));
+        Cambiar_Contraseña.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
         Cambiar_Contraseña.setText("Confirmar");
+        getContentPane().add(Cambiar_Contraseña);
+        Cambiar_Contraseña.setBounds(260, 510, 120, 30);
 
-        Contraseña.setText("jTextField1");
+        Contraseña.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        Contraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Contraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContraseñaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Contraseña);
+        Contraseña.setBounds(120, 330, 250, 35);
 
-        Confirma_Contraseña.setText("jTextField2");
+        Confirma_Contraseña.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        Confirma_Contraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(Confirma_Contraseña);
+        Confirma_Contraseña.setBounds(120, 420, 250, 35);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Regresar))
-                .addGap(93, 93, 93)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Cambiar_Contraseña)
-                    .addComponent(Confirma_Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1020, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(161, 161, 161)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Confirma_Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Regresar)
-                    .addComponent(Cambiar_Contraseña))
-                .addContainerGap(504, Short.MAX_VALUE))
-        );
+        Informacion_Personal3.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        Informacion_Personal3.setForeground(new java.awt.Color(255, 255, 255));
+        Informacion_Personal3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Informacion_Personal3.setText("Contraseña:");
+        getContentPane().add(Informacion_Personal3);
+        Informacion_Personal3.setBounds(110, 290, 120, 30);
+
+        Informacion_Personal2.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        Informacion_Personal2.setForeground(new java.awt.Color(255, 255, 255));
+        Informacion_Personal2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Informacion_Personal2.setText("Confirmar contraseña:");
+        getContentPane().add(Informacion_Personal2);
+        Informacion_Personal2.setBounds(120, 380, 180, 30);
+
+        Marvel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/marvel.png"))); // NOI18N
+        getContentPane().add(Marvel);
+        Marvel.setBounds(100, 120, 290, 80);
+
+        Informacion_Personal1.setFont(new java.awt.Font("Segoe UI Semilight", 1, 20)); // NOI18N
+        Informacion_Personal1.setForeground(new java.awt.Color(255, 255, 255));
+        Informacion_Personal1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Informacion_Personal1.setText("¿Olvidaste la contraseña?");
+        getContentPane().add(Informacion_Personal1);
+        Informacion_Personal1.setBounds(80, 200, 300, 30);
+
+        Informacion_Personal.setFont(new java.awt.Font("Lucida Fax", 1, 16)); // NOI18N
+        Informacion_Personal.setForeground(new java.awt.Color(255, 255, 255));
+        Informacion_Personal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Informacion_Personal.setText("Ingrese su nueva contraseña");
+        getContentPane().add(Informacion_Personal);
+        Informacion_Personal.setBounds(90, 240, 300, 30);
+
+        Borde_Menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/Cuadrado_Bo.jpg"))); // NOI18N
+        getContentPane().add(Borde_Menu);
+        Borde_Menu.setBounds(70, 80, 350, 520);
+
+        Fondologin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/guardianes_fondo_1.jpg"))); // NOI18N
+        Fondologin.setMaximumSize(new java.awt.Dimension(1380, 768));
+        Fondologin.setMinimumSize(new java.awt.Dimension(1380, 768));
+        getContentPane().add(Fondologin);
+        Fondologin.setBounds(0, 0, 1360, 770);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContraseñaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ContraseñaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,9 +154,16 @@ public class Cambiar_Contraseña_Dos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Borde_Menu;
     public javax.swing.JButton Cambiar_Contraseña;
     public javax.swing.JTextField Confirma_Contraseña;
     public javax.swing.JTextField Contraseña;
+    public javax.swing.JLabel Fondologin;
+    private javax.swing.JLabel Informacion_Personal;
+    private javax.swing.JLabel Informacion_Personal1;
+    private javax.swing.JLabel Informacion_Personal2;
+    private javax.swing.JLabel Informacion_Personal3;
+    private javax.swing.JLabel Marvel;
     public javax.swing.JButton Regresar;
     // End of variables declaration//GEN-END:variables
 }

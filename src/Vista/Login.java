@@ -31,56 +31,66 @@ public class Login extends javax.swing.JFrame {
         Crear_Usuario = new javax.swing.JButton();
         Contrasena = new javax.swing.JTextField();
         Usuario = new javax.swing.JTextField();
+        Marvel = new javax.swing.JLabel();
+        Borde_Menu = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        Fondologin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1360, 760));
+        getContentPane().setLayout(null);
 
-        Iniciar_Sesion.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Iniciar_Sesion.setBackground(new java.awt.Color(50, 130, 250));
+        Iniciar_Sesion.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Iniciar_Sesion.setText("Iniciar sesión");
+        getContentPane().add(Iniciar_Sesion);
+        Iniciar_Sesion.setBounds(120, 360, 240, 45);
 
-        Olvido_Contrasena.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Olvido_Contrasena.setBackground(new java.awt.Color(0, 0, 0));
+        Olvido_Contrasena.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Olvido_Contrasena.setForeground(new java.awt.Color(255, 255, 255));
         Olvido_Contrasena.setText("¿Olvidaste tu contraseña?");
+        Olvido_Contrasena.setBorder(null);
+        getContentPane().add(Olvido_Contrasena);
+        Olvido_Contrasena.setBounds(110, 420, 260, 45);
 
-        Crear_Usuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Crear_Usuario.setBackground(new java.awt.Color(46, 199, 62));
+        Crear_Usuario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Crear_Usuario.setText("Crear cuenta nueva");
+        getContentPane().add(Crear_Usuario);
+        Crear_Usuario.setBounds(130, 500, 230, 45);
 
         Contrasena.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Contrasena.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Contrasena.setText("Contraseña");
+        getContentPane().add(Contrasena);
+        Contrasena.setBounds(120, 290, 240, 45);
 
         Usuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Usuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Usuario.setText("Usuario");
+        getContentPane().add(Usuario);
+        Usuario.setBounds(120, 220, 240, 45);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(157, 157, 157)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Olvido_Contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Iniciar_Sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Crear_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1208, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(232, 232, 232)
-                .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Iniciar_Sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Olvido_Contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Crear_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(241, Short.MAX_VALUE))
-        );
+        Marvel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/marvel.png"))); // NOI18N
+        getContentPane().add(Marvel);
+        Marvel.setBounds(110, 120, 280, 80);
+
+        Borde_Menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/Cuadrado_Bo.jpg"))); // NOI18N
+        getContentPane().add(Borde_Menu);
+        Borde_Menu.setBounds(70, 80, 350, 520);
+
+        jButton1.setBorder(null);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setOpaque(false);
+        getContentPane().add(jButton1);
+        jButton1.setBounds(640, 230, 0, 0);
+
+        Fondologin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/guardianes_fondo_1.jpg"))); // NOI18N
+        Fondologin.setMaximumSize(new java.awt.Dimension(1380, 768));
+        Fondologin.setMinimumSize(new java.awt.Dimension(1380, 768));
+        getContentPane().add(Fondologin);
+        Fondologin.setBounds(0, 0, 1360, 770);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -121,10 +131,14 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Borde_Menu;
     public javax.swing.JTextField Contrasena;
     public javax.swing.JButton Crear_Usuario;
+    public javax.swing.JLabel Fondologin;
     public javax.swing.JButton Iniciar_Sesion;
+    private javax.swing.JLabel Marvel;
     public javax.swing.JButton Olvido_Contrasena;
     public javax.swing.JTextField Usuario;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

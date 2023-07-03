@@ -41,44 +41,66 @@ public class Registrar_Usuario extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         Membresia = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         Precio = new javax.swing.JLabel();
         costo = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1370, 770));
+        setPreferredSize(new java.awt.Dimension(1370, 770));
+        getContentPane().setLayout(null);
 
-        Regresar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Regresar.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Regresar.setText("Regresar");
+        getContentPane().add(Regresar);
+        Regresar.setBounds(150, 560, 150, 35);
 
-        Continuar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Continuar.setBackground(new java.awt.Color(102, 255, 102));
+        Continuar.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Continuar.setText("Registrar");
+        getContentPane().add(Continuar);
+        Continuar.setBounds(340, 560, 150, 35);
 
-        usuario.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        usuario.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         usuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(usuario);
+        usuario.setBounds(310, 180, 220, 30);
 
-        correo.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        correo.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         correo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(correo);
+        correo.setBounds(70, 250, 230, 30);
 
+        Confirmar_Correo.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Confirmar_Correo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(Confirmar_Correo);
+        Confirmar_Correo.setBounds(340, 250, 230, 30);
 
-        contraseña.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        contraseña.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         contraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(contraseña);
+        contraseña.setBounds(70, 310, 230, 30);
 
-        confirmar_contraseña.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        confirmar_contraseña.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         confirmar_contraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         confirmar_contraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 confirmar_contraseñaActionPerformed(evt);
             }
         });
+        getContentPane().add(confirmar_contraseña);
+        confirmar_contraseña.setBounds(340, 310, 230, 30);
 
-        Numero_Credito.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Numero_Credito.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Numero_Credito.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(Numero_Credito);
+        Numero_Credito.setBounds(70, 440, 230, 30);
 
-        Tipo_Membresia.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Tipo_Membresia.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Tipo_Membresia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Free", "Gold", "Premium", "Vip" }));
         Tipo_Membresia.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Tipo_Membresia.addActionListener(new java.awt.event.ActionListener() {
@@ -87,146 +109,86 @@ public class Registrar_Usuario extends javax.swing.JFrame {
                 Precio_Costo(evt);
             }
         });
+        getContentPane().add(Tipo_Membresia);
+        Tipo_Membresia.setBounds(340, 440, 230, 30);
 
+        jLabel1.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nombre de usuario*");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(160, 180, 130, 20);
 
+        jLabel2.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Correo electronico*");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(110, 230, 130, 16);
 
+        jLabel3.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Confirmar correo electronico*");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(360, 230, 200, 16);
 
+        jLabel4.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Contraseña* ");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(140, 290, 90, 16);
 
+        jLabel5.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Confirmar contraseña*");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(390, 290, 150, 16);
 
+        jLabel6.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Información del usuario");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(220, 120, 190, 30);
 
-        jLabel7.setText("Registrar");
-
+        Membresia.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        Membresia.setForeground(new java.awt.Color(255, 255, 255));
         Membresia.setText("Membresia ");
+        getContentPane().add(Membresia);
+        Membresia.setBounds(280, 370, 90, 30);
 
+        jLabel9.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Número de tarjeta de credito*");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(90, 410, 190, 20);
 
+        jLabel10.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Tipo");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(430, 410, 40, 16);
 
-        Precio.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        Precio.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        Precio.setForeground(new java.awt.Color(255, 255, 255));
         Precio.setText("Precio");
+        getContentPane().add(Precio);
+        Precio.setBounds(240, 500, 48, 22);
 
-        costo.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        costo.setBackground(new java.awt.Color(255, 0, 0));
+        costo.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        costo.setForeground(new java.awt.Color(255, 0, 0));
+        getContentPane().add(costo);
+        costo.setBounds(340, 500, 80, 22);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(632, 632, 632)
-                        .addComponent(jLabel6))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(612, 612, 612)
-                        .addComponent(Membresia))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(408, 408, 408)
-                        .addComponent(Numero_Credito, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(Tipo_Membresia, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(460, 460, 460)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Precio)
-                            .addComponent(Regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(Continuar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addComponent(costo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(0, 1055, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(395, 395, 395)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(correo, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(37, 37, 37)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Confirmar_Correo, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(confirmar_contraseña, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(451, 451, 451)
-                        .addComponent(jLabel2)
-                        .addGap(138, 138, 138)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(470, 470, 470)
-                        .addComponent(jLabel4)
-                        .addGap(211, 211, 211)
-                        .addComponent(jLabel5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(694, 694, 694)
-                        .addComponent(jLabel7))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(456, 456, 456)
-                        .addComponent(jLabel9)
-                        .addGap(153, 153, 153)
-                        .addComponent(jLabel10)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(63, Short.MAX_VALUE)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Confirmar_Correo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(correo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(confirmar_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(Membresia)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Numero_Credito, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Tipo_Membresia, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Precio)
-                    .addComponent(costo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Continuar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(235, 235, 235))
-        );
+        jLabel8.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Registrar Usuario");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(240, 80, 140, 30);
+
+        jLabel7.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/Registrase.jpg"))); // NOI18N
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(0, 0, 1370, 770);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -315,6 +277,7 @@ public class Registrar_Usuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     public javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables

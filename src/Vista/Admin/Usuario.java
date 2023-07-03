@@ -32,9 +32,8 @@ public class Usuario extends javax.swing.JFrame {
         Titulo = new javax.swing.JLabel();
         Titulo2 = new javax.swing.JLabel();
         pais_priv = new javax.swing.JLabel();
-        pais = new javax.swing.JLabel();
+        correo = new javax.swing.JLabel();
         Genero_priv = new javax.swing.JLabel();
-        genero = new javax.swing.JLabel();
         Fecha_priv = new javax.swing.JLabel();
         fecha_nacimiento = new javax.swing.JLabel();
         Nombre_priv = new javax.swing.JLabel();
@@ -42,208 +41,175 @@ public class Usuario extends javax.swing.JFrame {
         usuario_priv = new javax.swing.JLabel();
         usuario = new javax.swing.JLabel();
         Correo_electronico = new javax.swing.JLabel();
-        correo = new javax.swing.JLabel();
         Tarjeta = new javax.swing.JLabel();
         Nro_Tarjeta = new javax.swing.JLabel();
         contraseña = new javax.swing.JLabel();
         Contra = new javax.swing.JLabel();
         Eliminar = new javax.swing.JButton();
         Actualizar = new javax.swing.JButton();
+        pais = new javax.swing.JLabel();
+        genero = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        apellido = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1050, 700));
+        getContentPane().setLayout(null);
 
+        Buscar.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Buscar.setText("Buscar");
+        getContentPane().add(Buscar);
+        Buscar.setBounds(370, 40, 90, 40);
 
-        Regresar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Regresar.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Regresar.setText("Regresar");
+        getContentPane().add(Regresar);
+        Regresar.setBounds(180, 590, 180, 35);
 
-        Buscar_Usuario.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Buscar_Usuario.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Buscar_Usuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Buscar_Usuario.setText("Corre electronico / Usuario");
+        Buscar_Usuario.setText("Correo electronico / Usuario");
+        Buscar_Usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Buscar_UsuarioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Buscar_Usuario);
+        Buscar_Usuario.setBounds(110, 40, 210, 40);
 
-        Titulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Titulo.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
         Titulo.setText("Informacion personal");
+        getContentPane().add(Titulo);
+        Titulo.setBounds(220, 100, 170, 30);
 
-        Titulo2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        Titulo2.setText("Informacion del usuario");
+        Titulo2.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        Titulo2.setText("Información Usuario");
+        getContentPane().add(Titulo2);
+        Titulo2.setBounds(240, 330, 130, 30);
 
-        pais_priv.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        pais_priv.setText("Pais");
+        pais_priv.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        pais_priv.setText("Pais:");
+        getContentPane().add(pais_priv);
+        pais_priv.setBounds(190, 200, 40, 30);
 
-        pais.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        pais.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        correo.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        correo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(correo);
+        correo.setBounds(240, 410, 200, 30);
 
-        Genero_priv.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        Genero_priv.setText("Genero");
+        Genero_priv.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        Genero_priv.setText("Genero:");
+        getContentPane().add(Genero_priv);
+        Genero_priv.setBounds(170, 240, 60, 30);
 
-        Fecha_priv.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        Fecha_priv.setText("Fecha de nacimiento");
+        Fecha_priv.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        Fecha_priv.setText("Fecha de nacimiento:");
+        getContentPane().add(Fecha_priv);
+        Fecha_priv.setBounds(90, 280, 140, 30);
 
-        fecha_nacimiento.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        fecha_nacimiento.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         fecha_nacimiento.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(fecha_nacimiento);
+        fecha_nacimiento.setBounds(240, 280, 200, 30);
 
-        Nombre_priv.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        Nombre_priv.setText("Nombre");
+        Nombre_priv.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        Nombre_priv.setText("Nombre:");
+        getContentPane().add(Nombre_priv);
+        Nombre_priv.setBounds(170, 140, 60, 30);
 
-        Nombre.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Nombre.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(Nombre);
+        Nombre.setBounds(240, 140, 200, 30);
 
-        usuario_priv.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        usuario_priv.setText("Usuario");
+        usuario_priv.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        usuario_priv.setText("Usuario:");
+        getContentPane().add(usuario_priv);
+        usuario_priv.setBounds(170, 370, 60, 30);
 
-        usuario.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        usuario.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         usuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(usuario);
+        usuario.setBounds(240, 370, 200, 30);
 
-        Correo_electronico.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        Correo_electronico.setText("Correo electronico");
+        Correo_electronico.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        Correo_electronico.setText("Correo electronico:");
+        getContentPane().add(Correo_electronico);
+        Correo_electronico.setBounds(100, 410, 130, 30);
 
-        Tarjeta.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        Tarjeta.setText("Numero de tarjeta");
+        Tarjeta.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        Tarjeta.setText("Numero de tarjeta:");
+        getContentPane().add(Tarjeta);
+        Tarjeta.setBounds(100, 490, 130, 30);
 
-        Nro_Tarjeta.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Nro_Tarjeta.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Nro_Tarjeta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(Nro_Tarjeta);
+        Nro_Tarjeta.setBounds(240, 490, 200, 30);
 
-        contraseña.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        contraseña.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         contraseña.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(contraseña);
+        contraseña.setBounds(240, 450, 200, 30);
 
-        Contra.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        Contra.setText("Contraseña");
+        Contra.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        Contra.setText("Contraseña:");
         Contra.setToolTipText("");
+        getContentPane().add(Contra);
+        Contra.setBounds(150, 450, 80, 30);
 
-        Eliminar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Eliminar.setBackground(new java.awt.Color(255, 102, 102));
+        Eliminar.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Eliminar.setText("Eliminar");
+        getContentPane().add(Eliminar);
+        Eliminar.setBounds(40, 540, 180, 35);
 
-        Actualizar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        Actualizar.setBackground(new java.awt.Color(153, 204, 255));
+        Actualizar.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         Actualizar.setText("Actualizar");
+        getContentPane().add(Actualizar);
+        Actualizar.setBounds(310, 540, 180, 35);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(Titulo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Genero_priv)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Nombre_priv)
-                                .addGap(63, 63, 63)
-                                .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Buscar_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(Buscar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Fecha_priv)
-                                .addGap(49, 49, 49)
-                                .addComponent(fecha_nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(usuario_priv)
-                                .addGap(36, 36, 36)
-                                .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Correo_electronico)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Tarjeta)
-                                .addGap(91, 91, 91)
-                                .addComponent(Nro_Tarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Contra)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(pais_priv)
-                        .addGap(49, 49, 49)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(genero, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(pais, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(Titulo2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(correo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(83, 83, 83)
-                                .addComponent(Regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(233, 233, 233)
-                        .addComponent(contraseña))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(110, 110, 110)
-                        .addComponent(Actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1282, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Buscar_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Buscar))
-                .addGap(31, 31, 31)
-                .addComponent(Titulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Nombre_priv)
-                                .addGap(18, 18, 18)
-                                .addComponent(pais_priv)
-                                .addGap(34, 34, 34)
-                                .addComponent(Genero_priv))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(pais, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(genero, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Fecha_priv)
-                            .addComponent(fecha_nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Titulo2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(usuario_priv)
-                            .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Correo_electronico)
-                            .addComponent(correo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                        .addComponent(contraseña))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Contra)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Tarjeta)
-                    .addComponent(Nro_Tarjeta, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
-                .addComponent(Regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41))
-        );
+        pais.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        pais.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(pais);
+        pais.setBounds(240, 200, 200, 30);
+
+        genero.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        genero.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(genero);
+        genero.setBounds(240, 240, 200, 30);
+
+        jLabel1.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        jLabel1.setText("Apellido");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(170, 180, 60, 15);
+
+        apellido.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        apellido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(apellido);
+        apellido.setBounds(240, 170, 200, 30);
+
+        jLabel8.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/Login Cruds.png"))); // NOI18N
+        jLabel8.setMaximumSize(new java.awt.Dimension(1040, 680));
+        jLabel8.setMinimumSize(new java.awt.Dimension(1040, 680));
+        jLabel8.setPreferredSize(new java.awt.Dimension(1040, 680));
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(0, 0, 1050, 650);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void Buscar_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Buscar_UsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Buscar_UsuarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -292,10 +258,13 @@ public class Usuario extends javax.swing.JFrame {
     private javax.swing.JLabel Tarjeta;
     private javax.swing.JLabel Titulo;
     private javax.swing.JLabel Titulo2;
+    public javax.swing.JLabel apellido;
     public javax.swing.JLabel contraseña;
     public javax.swing.JLabel correo;
     public javax.swing.JLabel fecha_nacimiento;
     public javax.swing.JLabel genero;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel8;
     public javax.swing.JLabel pais;
     private javax.swing.JLabel pais_priv;
     public javax.swing.JLabel usuario;
